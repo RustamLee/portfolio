@@ -133,10 +133,43 @@ rus-section {
   margin-right: auto;
 }
 
+.rus-sub-container {
+  padding-top: 7em;
+  padding-bottom: 5em;
+}
+
 .rus-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 95px;
+}
+
+.section-title h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--color-01);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  color: var(--color-04);
+}
+
+.section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 75px;
 }
 
 /* =============== Components =============== */
@@ -572,4 +605,88 @@ rus-section {
 
 .home-scroll-btn i {
   font-size: 2rem;
+}
+
+/* =============== About Me =============== */
+
+.about-img {
+  position: relative;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-details {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-info .iam {
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--color-02);
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  line-height: 25px;
+}
+
+.about-info .about-text {
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  line-height: 25px;
+}
+
+.pro-list {
+  position: relative;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  column-gap: 10px;
+  row-gap: 12px;
+  margin: 38px 0;
+}
+
+.pro-card {
+  background: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 35px 25px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.pro-card span {
+  color: var(--primary-color);
+  font-size: 2.75rem;
+  font-weight: var(--font-bold);
+}
+
+.pro-card p {
+  color: var(--color-02);
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-regular);
+  line-height: 20px;
+  max-width: 100px;
+}
+
+.about-btns {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 25px;
 }

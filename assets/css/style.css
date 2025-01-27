@@ -176,6 +176,19 @@ rus-section {
 
 /*  Buttons  */
 
+.github-link {
+  color: #84b0f5;
+  text-decoration: none;
+  --hue: 210;
+  --sat: 100%;
+  --light: 60%;
+}
+
+.github-link:hover {
+  color: var(--hover-color);
+  text-decoration: none;
+}
+
 .rus-main-btn {
   width: fit-content;
   padding: 14px 30px;
@@ -910,3 +923,488 @@ rus-section {
   color: var(--color-04);
   font-size: var(--tiny-font-size);
 }
+
+/* =============== Services =============== */
+
+.service-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 35px;
+  row-gap: 38px;
+}
+
+.service-card {
+  position: relative;
+  background: var(--card-bg);
+  justify-content: center;
+  width: 275px;
+  height: 285px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-bottom: 5px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.service-icon {
+  color: var(--primary-color);
+  font-size: 4.15rem;
+}
+
+.service-info h4 {
+  color: var(--color-02);
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 25px;
+  margin-top: 20px;
+  white-space: nowrap;
+  max-width: 150px;
+}
+
+.service-see-more {
+  color: var(--color-01);
+  font-size: var(--base-font-size);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-see-more:hover {
+  color: var(--hover-color);
+}
+
+.service-see-more i {
+  font-size: 1.15rem;
+  transition: 0.3s;
+}
+
+.service-see-more:hover i {
+  margin-left: 3px;
+}
+
+.service-modal-backdrop {
+  z-index: var(--z-overlay);
+  position: fixed;
+  background: var(--modal-backdrop-bg);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-modal-backdrop.active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.service-modal {
+  position: relative;
+  background: var(--color-03);
+  width: 825px;
+  height: fit-content;
+  margin: 75px 25px;
+  padding: 50px 25px 50px 45px;
+  border-radius: 15px;
+  border-bottom: 5px solid var(--primary-color);
+  overflow: hidden;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.service-modal.active {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.modal-close-btn {
+  position: absolute;
+  color: var(--color-01);
+  font-size: 1.35rem;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.modal-close-btn:hover {
+  color: var(--hover-color);
+}
+
+.service-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  max-height: 500px;
+  margin-top: 50px;
+  padding: 10px;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+  background: hsl(var(--hue) 25% 20%);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
+
+.service-modal .modal-title {
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-modal .modal-title h3 {
+  color: var(--color-01);
+  font-size: var(--h3-font-size);
+  font-weight: 700;
+}
+
+.service-modal .modal-title p {
+  color: var(--color-04);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-regular);
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.service-modal .modal-content h4 {
+  color: var(--color-02);
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 15px;
+}
+
+.modal-content .my-services li {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.modal-content .my-services li i {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+.modal-content .my-services li p {
+  color: var(--color-02);
+  font-size: var(--base-font-size);
+  line-height: 22px;
+}
+
+/* =============== Portfolio =============== */
+
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  margin-bottom: 85px;
+}
+
+.portfolio-tabs .tab-btn {
+  color: var(--color-01);
+  font-size: var(--medium-font-size);
+  font-weight: var(--font-medium);
+  padding: 12px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.portfolio-tabs .tab-btn:hover {
+  color: var(--hover-color);
+}
+
+.portfolio-tabs .tab-btn.active {
+  color: var(--dark-color);
+  background: var(--primary-color);
+  padding: 12px 25px;
+}
+
+.portfolio-tabs .tab-btn.active:hover {
+  color: var(--white-color);
+  background: var(--hover-color);
+}
+
+.portfolio-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 50px;
+  row-gap: 55px;
+}
+
+.portfolio-container .card-with-modal {
+  display: block;
+}
+
+.portfolio-container .card-with-modal.hidden {
+  display: none;
+}
+
+.portfolio-card {
+  position: relative;
+  background: var(--card-bg);
+  width: 350px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.portfolio-card .card-img {
+  width: 100%;
+}
+
+.portfolio-card .card-img img {
+  width: 100%;
+}
+
+.portfolio-card .card-info {
+  position: relative;
+  padding: 10px 15px 20px 20px;
+}
+
+.portfolio-card .card-info span {
+  color: var(--color-04);
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-regular);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.portfolio-card .card-info h4 {
+  color: var(--color-02);
+  font-size: var(--medium-font-size);
+  font-weight: var(--font-medium);
+  margin-top: 5px;
+}
+
+.portfolio-card .card-info i {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  margin: 15px;
+  transition: 0.3s;
+  transform: scale(0);
+}
+
+.portfolio-card:hover .card-info i {
+  transform: scale(1);
+}
+
+.portfolio-modal-backdrop {
+  z-index: var(--z-overlay);
+  position: fixed;
+  background: var(--modal-backdrop-bg);
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-modal-backdrop.active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-modal-backdrop::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 5px;
+  background: hsl(var(--hue) 25% 20%);
+}
+
+.portfolio-modal-backdrop::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+.portfolio-modal-backdrop::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
+
+.portfolio-modal {
+  position: relative;
+  background: var(--color-03);
+  max-width: 900px;
+  height: fit-content;
+  margin: 75px 25px;
+  padding: 50px 45px;
+  border-radius: 15px;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.portfolio-modal.active {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.portfolio-modal .modal-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.portfolio-modal .modal-img {
+  width: 100%;
+}
+
+.portfolio-modal .modal-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.portfolio-modal .modal-content .modal-title {
+  color: var(--color-02);
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.portfolio-modal .modal-content .description {
+  color: var(--color-04);
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  line-height: 25px;
+}
+
+/* =============== Testimonials =============== */
+
+.testimonials {
+  position: relative;
+  width: 100%;
+  margin-top: 12em;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 1050px;
+  height: 275px;
+}
+
+.swiper-slide {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 45px;
+}
+
+.swiper-slide .client-img {
+  width: 185px;
+}
+
+.swiper-slide .client-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.swiper-slide .client-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.swiper-slide .client-details h3 {
+  color: var(--color-02);
+  font-size: var(--xlarge-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 5px;
+}
+
+.swiper-slide .client-details span {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-regular);
+}
+
+.swiper-slide .client-details p {
+  color: var(--color-02);
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  margin-top: 15px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next i,
+.swiper-button-prev i {
+  color: var(--primary-color);
+  font-size: 4.5rem;
+  transition: 0.3s ease;
+}
+
+.swiper-button-next i:hover,
+.swiper-button-prev i:hover {
+  color: var(--hover-color);
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: var(--primary-color);
+}
+
+/* =========================================
+   Contact Me
+========================================= */
+
+/* =========================================
+   Footer
+========================================= */
+
+/* =========================================
+   Media Queries (max-width: 1600px)
+========================================= */
+
+/* =========================================
+   Media Queries (max-width: 1200px)
+========================================= */
+
+/* =========================================
+   Media Queries (max-width: 992px)
+========================================= */
+
+/* =========================================
+   Media Queries (max-width: 768px)
+========================================= */
+
+/* =========================================
+   Media Queries (max-width: 480px)
+========================================= */
